@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe 65 Kulhad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-kulhad-500 { background-color: #f0a500; /* More refined gold */ }
+        .bg-kulhad-100 { background-color: #fef8e6; /* Lighter, warmer beige */ }
+        .text-kulhad-700 { color: #a0522d; /* Sienna, rich brown */ }
+        .text-kulhad-200 { color: #fcd34d; }
+        .hover\:text-kulhad-200:hover { color: #fcd34d; }
+        .bg-kulhad-600 { background-color: #e68a00; /* Darker gold */ }
+        .text-white{ color: #ffffff; }
+
+        /* Custom styles for enhanced UI */
+        .shadow-custom {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .text-gray-700{
+            color: #6b7280;
+        }
+        .mb-4{
+            margin-bottom: 1rem;
+        }
+        .mb-6{
+            margin-bottom: 1.5rem;
+        }
+        .mt-8{
+            margin-top: 2rem;
+        }
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, #f0a500, #e68a00);
+        }
+        .text-shadow{
+             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .animate-fadeIn{
+          animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gradient-to-r text-white fixed w-full top-0 z-50 shadow-md rounded-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center rounded-md">
+            <a href="#" class="text-2xl font-semibold text-shadow animate-fadeIn">Cafe 65 Kulhad</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="hover:text-kulhad-200 transition-all text-lg font-medium nav-links">Home</a></li>
+                    <li><a href="#about" class="hover:text-kulhad-200 transition-all text-lg font-medium nav-links">About Us</a></li>
+                    <li><a href="#menu" class="hover:text-kulhad-200 transition-all text-lg font-medium nav-links">Menu</a></li>
+                    <li><a href="#contact" class="hover:text-kulhad-200 transition-all text-lg font-medium nav-links">Contact</a></li>
+                    <li><a href="#map" class="hover:text-kulhad-200 transition-all text-lg font-medium nav-links">Location</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-kulhad-500 w-80 h-full absolute right-0 p-6 rounded-md">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-lg text-white hover:text-kulhad-200 transition-all font-medium">Home</a></li>
+                    <li><a href="#about" class="block text-lg text-white hover:text-kulhad-200 transition-all font-medium">About Us</a></li>
+                    <li><a href="#menu" class="block text-lg text-white hover:text-kulhad-200 transition-all font-medium">Menu</a></li>
+                    <li><a href="#contact" class="block text-lg text-white hover:text-kulhad-200 transition-all font-medium">Contact</a></li>
+                     <li><a href="#map" class="block text-lg text-white hover:text-kulhad-200 transition-all font-medium">Location</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="pt-20 pb-10 container mx-auto px-4">
+        <section id="home" class="mb-16">
+            <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col md:flex-row items-center gap-8 shadow-custom transition-all hover:shadow-lg animate-fadeIn">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-semibold text-kulhad-700 mb-4 text-shadow">Welcome to Cafe 65 Kulhad</h2>
+                    <p class="text-gray-700 mb-6 text-lg">Experience the unique taste of tea served in traditional Kulhads, along with a variety of delicious snacks and meals. A perfect place to relax and unwind.</p>
+                    <a href="#menu" class="bg-kulhad-500 text-white py-3 px-6 rounded-full hover:bg-kulhad-600 transition-all hover:scale-105 inline-block font-medium">Explore Menu</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="cafe 65 kulhad.jpg" alt="Cafe 65 Kulhad" class="rounded-lg shadow-lg w-full object-cover h-auto max-h-[400px] transition-all hover:scale-105 rounded-md" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mb-16">
+            <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col md:flex-row items-center gap-8 shadow-custom transition-all hover:shadow-lg animate-fadeIn">
+                <div class="md:w-1/2">
+                     <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Indian Tea Culture" class="rounded-lg shadow-lg w-full object-cover h-auto max-h-[400px] transition-all hover:scale-105 rounded-md" loading="lazy">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-semibold text-kulhad-700 mb-4 text-shadow">Our Story</h2>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Cafe 65 Kulhad is inspired by the rich tradition of serving tea in Kulhads - a sustainable and earthy way to enjoy your favorite beverage. We aim to bring you an authentic experience, combined with the warmth of Indian hospitality.
+                    </p>
+                    <p class="text-gray-700 text-lg">
+                       We believe in using fresh, locally sourced ingredients to create a menu that complements our signature Kulhad tea.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="mb-16">
+            <h2 class="text-3xl font-semibold text-kulhad-700 text-center mb-8 text-shadow">Our Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-custom animate-fadeIn">
+                    <h3 class="text-xl font-semibold text-kulhad-700 mb-2">Kulhad Chai</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Our signature tea, served in a traditional Kulhad.</p>
+                    <span class="text-gray-600 font-bold text-lg">₹30</span>
+                     <img src="kchai.jpg" alt="Kulhad Chai" class="rounded-md mt-4 w-full object-cover h-auto" loading="lazy">
+                </div>
+                <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-custom animate-fadeIn">
+                    <h3 class="text-xl font-semibold text-kulhad-700 mb-2">Masala Chai</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Spiced tea, brewed with aromatic Indian spices.</p>
+                     <span class="text-gray-600 font-bold text-lg">₹40</span>
+                     <img src="m chai.jpg" alt="Masala Chai" class="rounded-md mt-4 w-full object-cover h-auto" loading="lazy">
+                </div>
+                <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-custom animate-fadeIn">
+                    <h3 class="text-xl font-semibold text-kulhad-700 mb-2">Kulhad Coffee</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Coffee served in Kulhad for an earthy flavor.</p>
+                     <span class="text-gray-600 font-bold text-lg">₹50</span>
+                     <img src="kcoffe.jpeg" alt="Kulhad Coffee" class="rounded-md mt-4 w-full object-cover h-auto" loading="lazy">
+                </div>
+                <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-custom animate-fadeIn">
+                    <h3 class="text-xl font-semibold text-kulhad-700 mb-2">Poha</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Flattened rice cooked with vegetables and spices.</p>
+                     <span class="text-gray-600 font-bold text-lg">₹60</span>
+                     <img src="poha.jpeg" alt="Poha" class="rounded-md mt-4 w-full object-cover h-auto" loading="lazy">
+                </div>
+                <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-custom animate-fadeIn">
+                    <h3 class="text-xl font-semibold text-kulhad-700 mb-2">Samosa</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Deep-fried pastry with a savory filling.</p>
+                     <span class="text-gray-600 font-bold text-lg">₹25</span>
+                     <img src="samosa.jpg" alt="Samosa" class="rounded-md mt-4 w-full object-cover h-auto" loading="lazy">
+                </div>
+                <div class="bg-kulhad-100 rounded-lg shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-custom animate-fadeIn">
+                    <h3 class="text-xl font-semibold text-kulhad-700 mb-2">Kulhad Lassi</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Refreshing yogurt-based drink, served in Kulhad.</p>
+                    <span class="text-gray-600 font-bold text-lg">₹65</span>
+                    <img src="klassi.jpg" alt="Kulhad Lassi" class="rounded-md mt-4 w-full object-cover h-auto" loading="lazy">
+                </div>
+            </div>
+             <div class="mt-8 text-center animate-fadeIn">
+                <p class="text-gray-700 text-lg font-medium">Craving something special?  Visit us today and experience the magic of Kulhad!</p>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-16">
+            <h2 class="text-3xl font-semibold text-kulhad-700 text-center mb-8 text-shadow">Contact Us</h2>
+            <div class="bg-kulhad-100 rounded-lg shadow-md p-6 shadow-custom animate-fadeIn">
+                <form class="w-full max-w-md mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-kulhad-500 text-white py-3 px-6 rounded-full hover:bg-kulhad-600 transition-all hover:scale-105 focus:outline-none focus:shadow-outline w-full font-medium">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="map" class="mb-16 animate-fadeIn">
+            <h2 class="text-3xl font-semibold text-kulhad-700 text-center mb-8 text-shadow">Our Location</h2>
+            <div class="rounded-lg shadow-md overflow-hidden shadow-custom">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.7906508359765!2d85.31313237351927!3d23.323353305040232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e179e0ab4207%3A0x7cbc664284b2965f!2sCafe%2065%20kulhad!5e0!3m2!1sen!2sin!4v1746616449575!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-kulhad-800 text-white py-4 rounded-md mt-8">
+        <div class="container mx-auto px-4 text-center rounded-md">
+            © 2024 Cafe 65 Kulhad. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        const navLinks = document.querySelectorAll('.nav-links'); // Corrected line
+        const sections = document.querySelectorAll('section');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
